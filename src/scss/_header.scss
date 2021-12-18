@@ -1,0 +1,112 @@
+.header {
+    .sell-link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin: 0.2rem 3rem;
+    }
+    .links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .black-bg {
+            img {
+                width: 100%;
+                // height: 7rem;
+            }
+            width: 100%;
+            display: flex;
+            position: relative;
+            .icons-social {
+                width: 95%;
+                margin: auto;
+                height: 100%;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                .empty {
+                    width: 70%;
+                }
+                .icons {
+                    display: flex;
+                    width: 30%;
+                    justify-content: space-between;
+                }
+                img {
+                    width: 1.5rem;
+                }
+            }
+        }
+
+        .logo {
+            width: 15%;
+
+            h1 {
+                font-family: 'Anton', sans-serif;
+                font-size: 2.5rem;
+                font-weight: normal;
+                text-align: center;
+                color: $red-color;
+            }
+        }
+    }
+    .menu-items {
+        width: 80%;
+        justify-content: space-between;
+        display: flex;
+        margin: auto;
+        font-family: 'Lato', sans-serif;
+
+        height: 3.5rem;
+        ul {
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+            justify-content: space-between;
+            list-style: none;
+            margin: 0 !important;
+            li {
+                cursor: pointer;
+                margin: 0 2rem 0 0;
+            }
+        }
+        .login {
+            display: flex;
+            align-items: center;
+            button {
+                padding: 1rem 3rem;
+            }
+        }
+    }
+}
+.red-btn {
+    background: $red-color;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.red-btn-active {
+    background: white !important;
+    color: $red-color !important;
+    // box-shadow: 0px 0px 0px 1px $red-color inset;
+}
+.active {
+    position: relative;
+}
+
+.active::before {
+    transform: translateY(1.5rem) translateX(-50%);
+    border-radius: 100%;
+    position: absolute;
+    background: $red-color;
+    height: 0.5rem;
+    content: '';
+    width: 0.5rem;
+    left: 50%;
+    cursor: default;
+}

@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.login-form {
+  width: 25rem;
+  margin: auto;
+  padding: 10rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-form .login-form-wrapper {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 25rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.login-form .login-form-wrapper input {
+  width: 15rem;
+  padding: 0.5rem 1rem;
+  margin: -0.5rem 0;
+  border: 1px solid #808080;
+  border-radius: 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+.login-form .login-link {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.login-form .login-btn {
+  padding: 1rem 0;
+  width: 15rem;
+  margin: 5rem 0 0 0;
+  background-color: #c4c4c4;
+  color: black;
+}
+
+.login-page {
+  height: 80vh;
+}
+/*# sourceMappingURL=login_page.css.map */

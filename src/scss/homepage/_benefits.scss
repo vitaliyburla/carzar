@@ -1,0 +1,71 @@
+.benefits {
+    .parallax {
+        background: linear-gradient(
+                180deg,
+                #000000 0%,
+                rgba(0, 0, 0, 0.0833333) 43.75%,
+                rgba(0, 0, 0, 0) 100%
+            ),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('../img/bugatti_bg_fhd.jpeg');
+        background-blend-mode: normal, darken, normal;
+
+        /* Set a specific height */
+        min-height: 35rem;
+        height: 35rem;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 18rem;
+    width: 18rem;
+    background: url('../img/Circle_bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    .circle-title {
+        h2 {
+            font-family: 'Barlow', sans-serif;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-style: normal;
+            font-size: 2rem !important;
+            color: $red-color;
+            margin: 0 auto 1rem auto;
+        }
+    }
+    .circle-text {
+        h4 {
+            font-family: 'Lato', sans-serif;
+            color: black;
+            font-weight: normal;
+        }
+    }
+}
+// .benefits-container {
+//     position: relative;
+//     // display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+.circles {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    position: absolute;
+    top: 5rem;
+}

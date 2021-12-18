@@ -1,0 +1,50 @@
+.view-ad-container {
+    height: 80vh;
+    width: 80%;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    .ad-car-img {
+        img {
+            height: 25rem;
+            // width: 35rem;
+            object-fit: cover;
+        }
+    }
+    h2 {
+        font-family: 'Barlow', sans-serif;
+        font-weight: bold;
+        color: $red-color;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+
+    .ad-car-info-wrapper {
+        margin-left: 5rem;
+    }
+
+    .ad-car-info {
+        margin: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        width: 35rem;
+        h4 {
+            font-weight: normal;
+        }
+        h4.bold-name {
+            font-weight: bold;
+        }
+    }
+}
+.ad-info-buttons {
+    margin: 5rem 0;
+    display: flex;
+    justify-content: space-between;
+    button {
+        padding: 1rem 3rem;
+    }
+    .favourites-btn {
+        background-color: #c4c4c4;
+        color: black;
+    }
+}

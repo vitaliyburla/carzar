@@ -1,0 +1,60 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.all-ads-page {
+  width: 80%;
+  margin: 3rem auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.all-ads-page h2 {
+  font-family: 'Barlow', sans-serif;
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.all-ads-page .filters {
+  margin: 3rem 0 0 0;
+}
+
+.all-ads-page .filters .all-ads-select-items .search-select {
+  width: 15rem;
+  padding: 0.6rem;
+  border: 1px solid #808080;
+  border-radius: 10px;
+  margin: 1rem 0 0 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.all-ads-page .filters .all-ads-select-items .select-item {
+  margin: 1rem 0 0 0;
+}
+
+.all-ads-container {
+  margin: 0 0 0 3rem;
+}
+
+.all-ads-container .ad-miniatures-wrapper {
+  margin: 3rem 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=all_ads_page.css.map */
