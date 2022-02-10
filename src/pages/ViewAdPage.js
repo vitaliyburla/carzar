@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import AdCarInfo from '../components/viewadpage/AdCarInfo';
 import '../scss/view_ad_page.css';
-import lamba from '../img/yellow_car.png';
+import carImg from '../img/car.png';
 import Footer from '../components/Footer';
 import { useParams } from 'react-router-dom';
-import database from '../database/database';
+import { fetchAd } from '../api';
 
 const ViewAdPage = (props) => {
     const { src, name } = props;
@@ -13,7 +13,9 @@ const ViewAdPage = (props) => {
 
     const [currentAd, setCurrentAd] = useState(null);
     useEffect(() => {
-        setCurrentAd(database.find((x) => x.id == id));
+        fetchAd(id).then(({ data }) => {
+            setCurrentAd(data);
+        });
     }, []);
     return (
         <>
@@ -23,35 +25,42 @@ const ViewAdPage = (props) => {
                     <hr />
                     <div className='view-ad-container'>
                         <div className='ad-car-img'>
-                            <img src={currentAd.picture} alt={name} />
+                            <img src={carImg} alt={name} />
                         </div>
                         <div className='ad-car-info-wrapper'>
                             <h2>Price: {currentAd.price}$</h2>
+                            <AdCarInfo
+                                name='Description'
+                                value={currentAd.description}
+                            />
                             <h2>Information</h2>
-                            <AdCarInfo name='Owner' value={currentAd.owner} />
                             <AdCarInfo
-                                name='Body Style'
-                                value={currentAd.body_style}
+                                name='Owner'
+                                value={`${currentAd.userDto.firstName} ${currentAd.userDto.secondName}`}
                             />
-                            <AdCarInfo name='Make' value={currentAd.make} />
-                            <AdCarInfo name='Model' value={currentAd.model} />
                             <AdCarInfo
-                                name='Transmission'
-                                value={currentAd.transmission}
+                                name={"Owner's phone number"}
+                                value={currentAd.userDto.phoneNumber}
                             />
-                            <AdCarInfo name='Year' value={currentAd.year} />
+                            <AdCarInfo
+                                name='Car Type'
+                                value={currentAd.carDto.carTypeDto.name}
+                            />
+                            <AdCarInfo
+                                name='Body Type'
+                                value={currentAd.carDto.bodyTypeDto.name}
+                            />
+                            <AdCarInfo
+                                name='Model'
+                                value={currentAd.carDto.carModelDto.name}
+                            />
                             <AdCarInfo
                                 name='Mileage'
-                                value={currentAd.mileage}
+                                value={`${currentAd.mileage} km`}
                             />
-                            <AdCarInfo
-                                name='Condition'
-                                value={currentAd.condition}
-                            />
-                            <AdCarInfo name='City' value={currentAd.city} />
                             <AdCarInfo
                                 name='Body Color'
-                                value={currentAd.body_color}
+                                value={currentAd.color}
                             />
                             <div className='ad-info-buttons'>
                                 <button className='red-btn favourites-btn'>

@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
+import { signIn } from '../../api';
+
 const LoginForm = () => {
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const loginHandle = () => {
         const sendInformation = {
-            email,
-            password,
+            userEmail: email,
+            password: password,
         };
+        signIn(sendInformation).then((res) => {
+            if (res.status === 200) {
+                localStorage.setItem('userId', res.data.id);
+                history.push('/my-profile');
+            }
+        });
     };
     return (
         <div className='login-form'>
@@ -30,11 +40,9 @@ const LoginForm = () => {
                     onChange={(e) => setPassword(e.target.value)}
                 ></input>
             </div>
-            <Link className='login-link' to='/my-profile'>
-                <button className='red-btn login-btn' onClick={loginHandle}>
-                    Login
-                </button>
-            </Link>
+            <button className='red-btn login-btn' onClick={loginHandle}>
+                Login
+            </button>
         </div>
     );
 };

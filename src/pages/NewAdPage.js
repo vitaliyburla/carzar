@@ -11,14 +11,22 @@ const NewAdPage = () => {
         <>
             <Header />
             <hr />
-            <div className='info-body-container'>
-                <PhotoChooser
-                    title='PLEASE CHOOSE CAR PHOTOS'
-                    setPhoto={setPhoto}
-                    photo={photo}
-                />
-                <CarInfoDescritpion photo={photo} />
-            </div>
+            {localStorage.getItem('userId') ? (
+                <div className='info-body-container'>
+                    <PhotoChooser
+                        title='PLEASE CHOOSE CAR PHOTOS'
+                        setPhoto={setPhoto}
+                        photo={photo}
+                    />
+                    <CarInfoDescritpion photo={photo} />
+                </div>
+            ) : (
+                <div className='info-body-container'>
+                    <div className='error-message'>
+                        <h2>Please login first!</h2>
+                    </div>
+                </div>
+            )}
             <Footer />
         </>
     );

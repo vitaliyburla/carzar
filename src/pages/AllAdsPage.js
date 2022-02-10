@@ -7,13 +7,15 @@ import '../scss/all_ads_page.css';
 import SelectItem from '../components/SelectItem';
 
 import database from '../database/database';
+import { fetchAds } from '../api';
+import carImg from '../img/car.png';
 
 const AllAdsPage = () => {
-    let arr = [0, 1, 2, 3, 4];
-
     const [Ads, setAds] = useState([]);
     useEffect(() => {
-        setAds(database);
+        fetchAds().then(({ data }) => {
+            setAds(data);
+        });
     }, []);
 
     return (
@@ -21,22 +23,7 @@ const AllAdsPage = () => {
             <Header />
             <hr />
             <div className='all-ads-page'>
-                <div className='filters'>
-                    <div className='all-ads-select-items'>
-                        <SelectItem title='Make' selectItems={arr} />
-                        <SelectItem title='Model' selectItems={arr} />
-                        <SelectItem title='Transmission' selectItems={arr} />
-                        <SelectItem title='Body Color' selectItems={arr} />
-                        <SelectItem title='Year Min' selectItems={arr} />
-                        <SelectItem title='Year Max' selectItems={arr} />
-                        <SelectItem title='Mileage Min' selectItems={arr} />
-                        <SelectItem title='Mileage Max' selectItems={arr} />
-                        <SelectItem title='Price Min' selectItems={arr} />
-                        <SelectItem title='Price Max' selectItems={arr} />
-                        <SelectItem title='Condition' selectItems={arr} />
-                        <SelectItem title='Bodystyle' selectItems={arr} />
-                    </div>
-                </div>
+                <div className='filters'></div>
                 <div className='all-ads-container'>
                     <h2>All ads</h2>
                     <div className='ad-miniatures-wrapper'>
@@ -44,8 +31,8 @@ const AllAdsPage = () => {
                             return (
                                 <AdMiniature
                                     id={x.id}
-                                    name={`${x.make} ${x.model}`}
-                                    picture={x.picture}
+                                    name={x.carDto.carModelDto.name}
+                                    picture={x.picture ? x.picture : carImg}
                                     price={x.price}
                                 />
                             );

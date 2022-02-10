@@ -5,12 +5,16 @@ const Benefits = () => {
     return (
         <div className='benefits'>
             <div className='parallax'>
-                {/* </div> */}
-                {/* </div> */}
                 <div className='circles'>
-                    <Circle title='Lorem' text='lorem ipsum lalla djksdsd' />
-                    <Circle title='Lorem' text='lorem ipsum lalla djksttt' />
-                    <Circle title='Lorem' text='lorem ipsum lalla djksss' />
+                    <Circle title='Quickly' text='Sell and buy fast!' />
+                    <Circle
+                        title='Conveniently'
+                        text='Have everything close at hand'
+                    />
+                    <Circle
+                        title='Reliably'
+                        text='Your car will definitely be sold!'
+                    />
                 </div>
             </div>
         </div>

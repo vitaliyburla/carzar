@@ -74,14 +74,34 @@ const Header = () => {
                             Sell a car
                         </button>
                     </Link>
-                    <ul>
-                        <li className={pathname === 'register' ? 'active' : ''}>
-                            <Link to='/register'> Register</Link>
-                        </li>
-                        <li className={pathname === 'login' ? 'active' : ''}>
-                            <Link to='/login'>Login</Link>
-                        </li>
-                    </ul>
+                    {localStorage.getItem('userId') ? (
+                        <Link className='sell-link' to='/my-profile'>
+                            <button
+                                className={
+                                    pathname === 'my-profile'
+                                        ? 'red-btn red-btn-active active'
+                                        : 'red-btn'
+                                }
+                            >
+                                Profile
+                            </button>
+                        </Link>
+                    ) : (
+                        <ul>
+                            <li
+                                className={
+                                    pathname === 'register' ? 'active' : ''
+                                }
+                            >
+                                <Link to='/register'> Register</Link>
+                            </li>
+                            <li
+                                className={pathname === 'login' ? 'active' : ''}
+                            >
+                                <Link to='/login'>Login</Link>
+                            </li>
+                        </ul>
+                    )}
                 </div>
             </div>
         </div>

@@ -49,7 +49,7 @@
         padding: 1rem;
     }
 }
-.phone-input {
+.info-input {
     h4 {
         font-family: 'Lato', sans-serif;
         color: black;
@@ -58,10 +58,11 @@
     width: 25rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
     input {
         width: 15rem;
         padding: 0.5rem 1rem;
-        margin: -0.5rem 0;
         border: 1px solid #808080;
         border-radius: 10px;
         font-family: 'Lato', sans-serif;
@@ -70,4 +71,11 @@
 .place-ad-btn {
     padding: 1rem 4rem;
     margin: 4rem 0 2rem 0;
+}
+
+.error-message {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
